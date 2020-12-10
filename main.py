@@ -31,7 +31,7 @@ for face in faces:
     cv2.circle(img=img, center=(eye1.x, eye1.y), radius=3, color=(0, 0, 255), thickness=-1)
     cv2.circle(img=img, center=(eye2.x, eye2.y), radius=3, color=(0, 0, 255), thickness=-1)
 
-    distance = ((eye1.x - eye2.x) ** 2 - (eye1.y - eye2.y) ** 2) ** 0.5
+    distance = ((eye1.x - eye2.x) ** 2 + (eye1.y - eye2.y) ** 2) ** 0.5
 
 cv2.putText(img=img, text='La distancia entre los ojos es {}'.format(distance), org=(50, 100),
             fontFace=cv2.FONT_HERSHEY_SIMPLEX, fontScale=1, color=(255, 0, 0), thickness=2, lineType=cv2.LINE_AA)
